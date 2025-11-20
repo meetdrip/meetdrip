@@ -58,3 +58,13 @@ Prima di modificare qualsiasi file o codice, verificare:
 - Layout che si adattano automaticamente alle dimensioni dello schermo
 - Testare su diverse risoluzioni e dispositivi
 
+## Gestione Messaggi (Web App)
+- Tutti i messaggi devono essere gestiti dal gestionale, NON dalla pagina web
+- NON usare alert(), confirm(), prompt() nativi del browser
+- Creare componenti personalizzati per:
+  - Notifiche di successo
+  - Messaggi di errore
+  - Conferme (dialog/modal personalizzati)
+  - Prompt/input personalizzati
+- Tutti i messaggi devono essere integrati nell'interfaccia dell'app con stile coerente
+

@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthStore } from './store/authStore';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Layout from './components/layout/Layout';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated());
@@ -17,14 +19,9 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <div className="min-h-screen bg-background p-8">
-                  <div className="max-w-7xl mx-auto">
-                    <div className="glass-card p-8 animate-fade-in">
-                      <h1 className="text-4xl font-bold text-gradient-gold mb-2">Dashboard</h1>
-                      <p className="text-gray-400">Benvenuto nella tua area riservata</p>
-                    </div>
-                  </div>
-                </div>
+                <Layout>
+                  <Dashboard />
+                </Layout>
               </ProtectedRoute>
             }
           />
