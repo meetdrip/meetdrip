@@ -1,0 +1,17 @@
+{
+  "name": "meetdrip",
+  "version": "1.0.0",
+  "description": "Meetdrip - Sistema di gestione eventi",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "node scripts/start-backend.js",
+    "dev:frontend": "node scripts/start-frontend.js",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd backend && npm run build && cd ../frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "kill-port": "^2.0.1"
+  }
+}
